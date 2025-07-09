@@ -1,24 +1,24 @@
 //Regular variables and constants
-let firstName = 'John';
-console.log(firstName);
-
-const PI = 3.14159;
-console.log(PI);
-
-let age = 18;
-console.log(age);
-
-let isStudent = true;
-console.log(isStudent);
-
-let favoriteColor = null;
-console.log(favoriteColor);
-
-let undefinedVariable
-console.log(undefinedVariable);
-
-age = 25;
-console.log(age);
+let firstName = 'John'; //  ---------
+console.log(firstName);   //        |
+let lastName = 'Doe';     //        |
+const PI = 3.14159;       //        |
+console.log(PI);          //        |
+                        //          |
+let age = 18;             //        |
+console.log(age);         //        |
+                          //        |
+let isStudent = true;   //          |---- This are correctly declared variables @Timi-php
+console.log(isStudent);      //     |
+                        //          |
+let favoriteColor = null;    //     |
+console.log(favoriteColor);  //     |
+                             //     |
+let undefinedVariable          //   |
+console.log(undefinedVariable);  // |
+                                //  |  
+age = 25;                       //  |
+console.log(age);   //  -------------
 
 
 //Constant Object
@@ -30,7 +30,7 @@ const person = {
     email: 'cgvbn@gmail.com'
 }
 
-city: 'SanDiego'
+city: 'SanDiego' // You dont need this line
 
 console.log(person)
 
@@ -43,7 +43,7 @@ console.log(numbers)
 
 
 
-//Perform a task(greeting) functio
+//Perform a task(greeting) function
 function greetUser(userName) {
     console.log('Hello, ' + userName, '!' + ' Welcome');
 
@@ -52,21 +52,32 @@ function greetUser(userName) {
 greetUser('DivineC');
 
 //Calculating function
-function calculateArea(length, width) {
+// function calculateArea(length, width) {
+//     return length * width;
+// }
+
+// let length, width = calculateArea(3,2)
+
+// console.log(length, width);
+
+//----- @Timi-php Calculating function
+function calculateArea(length, width)
+{
     return length * width;
 }
+let area = calculateArea(3, 2);
+console.log('The area is: ' + area);
 
-let length, width = calculateArea(3,2)
-
-console.log(length, width);
 
 
 //Arrow function
-function squareNumber(number) {
-return number * number;
-}
+function squareNumber(number) {   // @Timi-php
+return number * number;           // you can just say 
+                                 // let number = 3;
+                                 // console.log(squareNumber(number));
+}                                // Same as on your Function to demonstrate a simple higher-order function
 
-let number = squareNumber(3)
+let number = squareNumber(3);  
 console.log(number);
 
 
@@ -99,13 +110,13 @@ console.log(multiplyBy5)
 
 
 //Dynamic typing with functions
-function displayInfo(data) {
+function displayInfo(data) {                // @Timi-php you got the output wrong
     if (typeof data === 'string') {
-        console.log('This is a string: [data]');
+        console.log('This is a string: [data]'); //  console.log('This is a string: '+data);
     } else if (typeof data === 'number') {
-        console.log('This is a number: [data]');    
+        console.log('This is a number: [data]');    // console.log('This is a number: '+data);
     } else if (typeof data === 'object' && data != null) {
-        console.log('This is an object: [data]');
+        console.log('This is an object: [data]');   // console.log('This is an object: '+JSON.stringify(data));
     }
 }
 
@@ -124,17 +135,37 @@ let userProfile = {
     permissions: ['fgyhj','fghj','trt77o8uihg']
 }
 
-function renderProfile() {
-    if (isActive === true) {
+function renderProfile() {    // @Timi-php you got this wrong
+    if (isActive === true) {   // you should use userProfile.isActive
         console.log('Online')
-    } else if (isActive === false) {
-        console.log('Offline')
+    } else if (isActive === false) { // you should use userProfile.isActive
+        console.log('Offline')                      // Then call the function renderProfile();
     }
 
 }
 
-    const modifiedArray = ['fgyhj','fghj','trt77o8uihg'];
-
+    const modifiedArray = ['fgyhj','fghj','trt77o8uihg'];   // also you should use userProfile.permissions
+                                                            // like const modifiedArray = userProfile.permissions;
+                                                            // then console.log(modifiedArray);
 
 
 console.log(renderProfile)
+
+
+
+// @Timi-php Displaying user profile correctly
+
+function crenderProfile() {    
+    if (userProfile.isActive === true) {   
+        console.log('Online')
+    } else if (userProfile.isActive === false) { 
+        console.log('Offline')                     
+    }
+
+}
+
+const cmodifiedArray = userProfile.permissions;
+
+console.log(cmodifiedArray);
+crenderProfile();
+
