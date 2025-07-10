@@ -31,6 +31,7 @@ const person = {
 }
 
 city: 'SanDiego' // You dont need this line
+                    //How then will I change the city, cause I was asked to reassign the city
 
 console.log(person)
 
@@ -112,12 +113,12 @@ console.log(multiplyBy5)
 //Dynamic typing with functions
 function displayInfo(data) {                // @Timi-php you got the output wrong
     if (typeof data === 'string') {
-        console.log('This is a string: [data]'); //  console.log('This is a string: '+data);
+        console.log('This is a string: '+data); //  console.log('This is a string: '+data);
     } else if (typeof data === 'number') {
-        console.log('This is a number: [data]');    // console.log('This is a number: '+data);
+        console.log('This is a number: '+data);    // console.log('This is a number: '+data);
     } else if (typeof data === 'object' && data != null) {
-        console.log('This is an object: [data]');   // console.log('This is an object: '+JSON.stringify(data));
-    }
+        console.log('This is an object: '+JSON.stringify(data));   // console.log('This is an object: '+JSON.stringify(data));
+    }                                                              //*Correction taken*
 }
 
 displayInfo('Hello Suckers')
@@ -136,15 +137,16 @@ let userProfile = {
 }
 
 function renderProfile() {    // @Timi-php you got this wrong
-    if (isActive === true) {   // you should use userProfile.isActive
+    if (userProfile.isActive === true) {   // you should use userProfile.isActive
         console.log('Online')
-    } else if (isActive === false) { // you should use userProfile.isActive
+    } else if (userProfile.isActive === false) { // you should use userProfile.isActive
         console.log('Offline')                      // Then call the function renderProfile();
     }
-
+                                                    //Correction taken
 }
 
-    const modifiedArray = ['fgyhj','fghj','trt77o8uihg'];   // also you should use userProfile.permissions
+    const modifiedArray = userProfile.permissions;
+    console.log(modifiedArray);                                // also you should use userProfile.permissions
                                                             // like const modifiedArray = userProfile.permissions;
                                                             // then console.log(modifiedArray);
 
@@ -154,18 +156,4 @@ console.log(renderProfile)
 
 
 // @Timi-php Displaying user profile correctly
-
-function crenderProfile() {    
-    if (userProfile.isActive === true) {   
-        console.log('Online')
-    } else if (userProfile.isActive === false) { 
-        console.log('Offline')                     
-    }
-
-}
-
-const cmodifiedArray = userProfile.permissions;
-
-console.log(cmodifiedArray);
-crenderProfile();
 
