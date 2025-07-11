@@ -138,9 +138,11 @@ let userProfile = {
 
 function renderProfile() {    // @Timi-php you got this wrong
     if (userProfile.isActive === true) {   // you should use userProfile.isActive
-        console.log('Online')
+        // console.log('Online')
+        return 'Online';
     } else if (userProfile.isActive === false) { // you should use userProfile.isActive
-        console.log('Offline')                      // Then call the function renderProfile();
+        // console.log('Offline') 
+        return 'Offline'                     // Then call the function renderProfile();
     }
                                                     //Correction taken
 }
@@ -150,8 +152,8 @@ function renderProfile() {    // @Timi-php you got this wrong
                                                             // like const modifiedArray = userProfile.permissions;
                                                             // then console.log(modifiedArray);
 
-
-console.log(renderProfile)
+    // renderProfile();
+console.log(renderProfile())
 
 
 
